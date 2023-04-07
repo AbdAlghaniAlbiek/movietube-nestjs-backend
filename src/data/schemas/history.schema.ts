@@ -10,7 +10,7 @@ export type HistoryDocument = History & Document;
 @Schema()
 export class History {
 	@Transform(({ value }) => value.toString())
-	public _id: ObjectId;
+	public _id: ObjectId | string;
 
 	@Prop({ type: mongoose.Schema.Types.ObjectId, ref: User.name })
 	@Type(() => User)
