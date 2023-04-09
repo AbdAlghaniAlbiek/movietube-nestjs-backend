@@ -10,7 +10,7 @@ export type FavouriteDocument = Favourite & Document;
 @Schema()
 export class Favourite {
 	@Transform(({ value }) => value.toString())
-	public _id: ObjectId;
+	public _id: ObjectId | string;
 
 	@Prop({ type: mongoose.Schema.Types.ObjectId, ref: User.name })
 	@Type(() => User)
